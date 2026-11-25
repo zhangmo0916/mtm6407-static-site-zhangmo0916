@@ -1,0 +1,529 @@
+
+/* =========================================
+   MO'S PHOTOGRAPHY PORTFOLIO
+   Custom CSS
+   ========================================= */
+
+/* -----------------------------------------
+   1. BRAND COLOURS
+   ----------------------------------------- */
+
+   :root {
+    --vp-c-brand-1: #BC5651;
+    --vp-c-brand-2: #A64743;
+    --vp-c-brand-3: #BC5651;
+  }
+  
+  /* -----------------------------------------
+     2. HOME PAGE HERO
+     ----------------------------------------- */
+  
+  .VPHome .VPHero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 85vh;
+    padding: 120px 6%;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  
+  /* Full-width background photo */
+  .VPHome .VPHero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.25) 55%,
+        rgba(0, 0, 0, 0.15) 100%
+      ),
+      url('/images/hero-img.jpg');
+  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  
+  /* Hero container */
+  .VPHome .VPHero .container {
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  /* Left-aligned hero text */
+  .VPHome .VPHero .main {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0;
+    text-align: left;
+  }
+  
+  /* Main title */
+  .VPHome .VPHero .name {
+    display: block;
+    width: 100%;
+    max-width: none;
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  
+  /* Subtitle */
+  .VPHome .VPHero .text {
+    max-width: none;
+    color: #ffffff;
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  
+  /* Description */
+  .VPHome .VPHero .tagline {
+    max-width: 650px;
+    margin-left: 0;
+    margin-right: 0;
+    color: #f0f0f0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+  
+  /* Hide default side image */
+  .VPHome .VPHero .image {
+    display: none;
+  }
+  
+  /* -----------------------------------------
+     3. HERO BUTTONS
+     ----------------------------------------- */
+  
+  .VPHome .VPHero .actions {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .VPHome .VPHero .action {
+    margin: 0;
+  }
+  
+  .VPHome .VPHero .VPButton {
+    border-radius: 4px;
+    padding: 0 24px;
+    transition:
+      transform 0.2s ease,
+      background-color 0.2s ease;
+  }
+  
+  .VPHome .VPHero .VPButton:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Primary button */
+  .VPHome .VPHero .VPButton.brand {
+    background-color: #BC5651;
+    border-color: #BC5651;
+    color: #ffffff;
+  }
+  
+  .VPHome .VPHero .VPButton.brand:hover {
+    background-color: #A64743;
+    border-color: #A64743;
+  }
+  
+  /* Secondary button */
+  .VPHome .VPHero .VPButton.alt {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    color: #333333;
+  }
+  
+  .VPHome .VPHero .VPButton.alt:hover {
+    background-color: #eeeeee;
+  }
+  
+  /* -----------------------------------------
+     4. HOME PAGE NAVIGATION
+     ----------------------------------------- */
+  
+  /* Transparent navbar over hero */
+  .VPNavBar:has(+ .VPNavScreen) {
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Homepage navbar */
+  .VPNavBar.home {
+    background: transparent;
+  }
+  
+  /* Navigation text on homepage */
+  .VPNavBar.home .VPNavBarTitle .title,
+  .VPNavBar.home .VPNavBarMenuLink {
+    color: #ffffff;
+  }
+  
+  /* -----------------------------------------
+     5. HOME CONTENT
+     ----------------------------------------- */
+  
+  .VPHomeContent .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .VPHomeContent .vp-doc {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+    
+  .VPHomeContent .vp-doc h2 {
+    margin-top: 48px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .VPHomeContent .vp-doc h3 {
+    margin-top: 32px;
+    font-size: 1.4rem;
+  }
+  
+  .VPHomeContent .vp-doc p {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+
+/* -----------------------------------------
+   6. PHOTOGRAPHY CATEGORY CARDS
+   ----------------------------------------- */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  margin: 40px 0 60px;
+}
+
+.photo-card {
+  position: relative;
+  display: block;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #333;
+  text-decoration: none;
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  margin: 0;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform 0.35s ease;
+}
+
+.photo-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.photo-card-content {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  z-index: 2;
+}
+
+.photo-card-content h3 {
+  margin: 0 0 8px;
+  padding: 0;
+  border: none;
+  color: #fff;
+  font-size: 1.7rem;
+}
+
+.photo-card-content p {
+  margin: 0;
+  color: #eee;
+  font-size: 0.95rem;
+}
+
+@media (hover: hover) {
+  .photo-card:hover img {
+    transform: scale(1.05);
+  }
+}
+
+.photo-card:focus-visible {
+  outline: 3px solid #BC5651;
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .photo-card {
+    height: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .photo-card {
+    height: 230px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-card img {
+    transition: none;
+  }
+}
+
+  
+  /* -----------------------------------------
+     7. TABLET RESPONSIVE
+     ----------------------------------------- */
+  
+  @media (max-width: 900px) {
+    .VPHome .VPHero {
+      min-height: 75vh;
+      padding: 100px 5%;
+    }
+  
+    .VPHome .VPHero .name {
+      font-size: clamp(2rem, 5vw, 3rem);
+      white-space: normal;
+    }
+  
+    .VPHome .VPHero .main {
+      max-width: 100%;
+    }
+  
+    .VPHome .VPHero .tagline {
+      max-width: 550px;
+    }
+  }
+  
+  /* -----------------------------------------
+     8. MOBILE RESPONSIVE
+     ----------------------------------------- */
+  
+  @media (max-width: 768px) {
+    .VPHome .VPHero {
+      min-height: 75vh;
+      padding: 100px 24px 80px;
+    }
+  
+    /* Darker overlay on mobile */
+    .VPHome .VPHero::before {
+      background-image:
+        linear-gradient(
+          rgba(0, 0, 0, 0.45),
+          rgba(0, 0, 0, 0.65)
+        ),
+        url('/images/hero-img.jpg');
+  
+      background-position: center;
+    }
+  
+    .VPHome .VPHero .container {
+      justify-content: center;
+    }
+  
+    .VPHome .VPHero .main {
+      max-width: 100%;
+      text-align: center;
+    }
+  
+    .VPHome .VPHero .name {
+      font-size: 2.4rem;
+      white-space: normal;
+    }
+  
+    .VPHome .VPHero .text {
+      font-size: 1.6rem;
+    }
+  
+    .VPHome .VPHero .tagline {
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1rem;
+    }
+  
+    .VPHome .VPHero .actions {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+  
+    .VPHomeContent .vp-doc {
+      padding: 40px 20px;
+    }
+    
+    .VPHomeContent .vp-doc h2 {
+      font-size: 1.6rem;
+    }
+  }
+  
+  /* -----------------------------------------
+     9. SMALL MOBILE
+     ----------------------------------------- */
+  
+  @media (max-width: 480px) {
+    .VPHome .VPHero {
+      min-height: 75vh;
+      padding: 100px 16px 60px;
+    }
+  
+    .VPHome .VPHero .name {
+      font-size: 2rem;
+    }
+  
+    .VPHome .VPHero .text {
+      font-size: 1.4rem;
+    }
+  
+    .VPHome .VPHero .tagline {
+      font-size: 0.95rem;
+    }
+  
+    .VPHome .VPHero .VPButton {
+      padding: 0 18px;
+    }
+  }
+  
+  /* -----------------------------------------
+     10. ACCESSIBILITY
+     ----------------------------------------- */
+  
+  @media (prefers-reduced-motion: reduce) {
+    .VPHome .VPHero .VPButton {
+      transition: none;
+    }
+  
+    .VPHome .VPHero .VPButton:hover {
+      transform: none;
+    }
+  }
+
+/* =========================================
+   PHOTOGRAPHY GALLERY LAYOUT
+   ========================================= */
+
+   .gallery-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+  }
+  
+  /* Gallery heading */
+  .gallery-header {
+    max-width: 800px;
+    margin: 0 auto 50px;
+    text-align: center;
+  }
+  
+  .gallery-header h1 {
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  
+  .gallery-header p {
+    color: var(--vp-c-text-2);
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  /* Photography grid */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+  
+  /* Individual photographs */
+  .gallery-item {
+    margin: 0;
+  }
+  
+  .gallery-item img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item img:hover {
+    transform: scale(1.02);
+  }
+  
+  /* Photo captions */
+  .gallery-item figcaption {
+    padding-top: 12px;
+    color: var(--vp-c-text-2);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  /* Tablet and mobile */
+  @media (max-width: 768px) {
+    .gallery-page {
+      padding: 40px 16px 60px;
+    }
+  
+    .gallery-header {
+      margin-bottom: 32px;
+    }
+  
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+  
+  /* Reduced motion accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .gallery-item img {
+      transition: none;
+    }
+  
+    .gallery-item img:hover {
+      transform: none;
+    }
+  }
